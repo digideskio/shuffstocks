@@ -1,5 +1,7 @@
-angular.module("stocksApp", [])
-		.controller("stocksCtrl", function($scope){
+var stocksApp = angular.module('stocksApp', []);
 
-			$scope.stocksArray = "Testing this shit!"
-		});
+stocksApp.controller("stocksCtrl", ["$scope", "$filter",function($scope) {
+
+	$scope.stocksArray = "Thsi is working!ddddd"
+
+}]);
