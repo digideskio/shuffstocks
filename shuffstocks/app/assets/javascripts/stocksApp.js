@@ -1,4 +1,7 @@
-var stocksApp = angular.module('stocksApp', []);
+
+
+var stocksApp = angular.module('stocksApp', ['ngRoute']);
+
 
 stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scope, $filter, $http) {
 
@@ -17,9 +20,17 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 	}
 
 	$scope.submit = function(){
-		$http({method: "POST", data:$scope.stockSubmission, url: "/rector"})
+		$http({method: "POST", data: {sss:"dd"}, url: "/rector"})
 		.success(function(data){ console.log(data)});
 	};
 
 }]);
+
+stocksApp.config(function($routeProvider){
+	console.log("shulkjhgff")
+	$routeProvider.when("/", {
+		templateUrl: "<%= asset_path('templates/shuff.html.erb') %>",
+		controller: "stocksCtrl"
+	});
+});
 
