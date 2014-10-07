@@ -7,27 +7,47 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 
 	$scope.stockSubmission = null;
 
-	$scope.stocksArray = [
-		{ name: "Apple Computer", symbol: "AAPL", news: "Stuff that goes here"},
-		{ name: "Microsoft", symbol: "MSFT", news: "We are all dying of starvation because we're doing terribly."}
-	];
+	$scope.stocksArray = [];
 
-	$scope.currentItem = null;
+	$scope.load = null;
 
 	$scope.reassign = function(item){
 		$scope.currentItem = item;
 		console.log(item);
 	}
 
-	$scope.submit = function(){
-		$http({method: "POST", data: {sss:"dd"}, url: "/rector"})
-		.success(function(data){ console.log(data)});
+	$scope.displayName = function(object){
+	 	return object["rss"]["channel"]
 	};
+
+	$scope.submit = function(item){
+		console.log(item)
+		$http({
+			method: "POST",
+			params: {"stock": item},
+			url: "/rector",
+			headers: {
+        	'Content-type': 'application/json'
+    }
+
+		})
+		.success(function(data){
+			$scope.stocksArray.push(data);
+			console.log(data);
+			console.log($scope.stocksArray)
+		});
+	};
+
+
+
+	setInterval(function(){
+	console.log("s")
+	},
+	1000);
 
 }]);
 
 stocksApp.config(function($routeProvider){
-	console.log("shulkjhgff")
 	$routeProvider.when("/", {
 		templateUrl: "<%= asset_path('templates/shuff.html.erb') %>",
 		controller: "stocksCtrl"
