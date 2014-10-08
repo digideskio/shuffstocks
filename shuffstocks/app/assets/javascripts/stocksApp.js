@@ -17,7 +17,7 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 	}
 
 	$scope.displayName = function(object){
-	 	return object["rss"]["channel"]
+	 	return object["fundamentals"];
 	};
 
 	$scope.submit = function(item){

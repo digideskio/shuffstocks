@@ -8,7 +8,7 @@ end
 
 def rector
 	stock = params["stock"]
-	render :json => get_yahoo_funds(stock)
+	render :json => return_stock_information(stock)
 end
 
 end
