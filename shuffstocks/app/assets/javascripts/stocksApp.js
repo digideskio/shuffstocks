@@ -39,12 +39,6 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 	};
 
 
-
-	setInterval(function(){
-	console.log("s")
-	},
-	1000);
-
 }]);
 
 stocksApp.config(function($routeProvider){
