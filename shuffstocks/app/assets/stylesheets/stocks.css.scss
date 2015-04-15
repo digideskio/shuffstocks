@@ -58,14 +58,6 @@ h1 {
 	text-align: center;
 }
 
-.input-header{
-	font-size: 40px;
-	font-weight: bold;
-	border-bottom: .1em solid black;
-	width: 20em;
-	padding-top: 1em;
-	margin: 0 auto;
-}
 
 .stock-form {
 	width: 46.5em;
@@ -88,7 +80,8 @@ h1 {
 }
 
 .stock-form button{
-	background: none;
+	background: #B0D8F2;
+	padding: .5em;
 	margin-top: .5em;
 	border-radius: 1em;
 	font-size: 32px;
@@ -97,8 +90,81 @@ h1 {
 }
 
 .stocks-container {
-	background-color: green;
+	border-radius: 1em;
+	border: .1em solid #4391c1;
+	box-shadow: 0em 0em .3em .2em #A8D5F1,
+				0em 0em 0em .4em #4FA9E3;
 	text-align: center;
-	width: 30em;
+	margin: 1em 1em 1em 1em;
+	padding: 1em;
+	background: -webkit-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: -moz-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: -o-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: -ms-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: linear-gradient(bottom, #9BCEEF, #B0D8F2);
+}
+
+.stocks-container h2 {
+	color: white;
+	font-size: 40px;
+	font-weight: bold;
+	display: inline-block;
+	border-bottom: .05em solid white;
+	margin: 0 auto;
+}
+
+.header-bar {
+	width: 100%;
+	display: block;
+}
+
+
+.left-container {
 	float: left;
+	width: 55em;
+	overflow: auto;
+}
+
+.left-container ul {
+	list-style: none;
+	font-size: 32px;
+}
+
+.item-panel {
+	box-shadow: 0em 0em .3em .1em #A8D5F1,
+				0em 0em 0em .2em #4FA9E3;
+	border: .1em solid #A8D5F1;
+	display: inline-block;
+	padding: 1em;
+	margin: .5em;
+	border-radius: 1em;
+	background: -webkit-linear-gradient(bottom, #F0F7FC, white);
+	background: -moz-linear-gradient(bottom, #F0F7FC, white);
+	background: -o-linear-gradient(bottom, #F0F7FC, white);
+	background: -ms-linear-gradient(bottom, #F0F7FC, white);
+	background: linear-gradient(bottom, #F0F7FC, white);
+}
+
+.right-container {
+	float: right;
+	width: 35em;
+	position: absolute;
+	right: 0em;
+}
+
+.iframe-container {
+	display: inline-block;
+	background-color: blue;
+	height: 55em;
+	width: 55em;
+	float: left;
+	clear: left;
+}
+
+.iframe-container iframe {
+	width: 90%;
+	height: 46em;
+	padding-top: 1em;
+	border: .1em solid black;
+	margin-top: 2em;
 }

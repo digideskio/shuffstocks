@@ -1,9 +1,9 @@
 
 
-var stocksApp = angular.module('stocksApp', ['ngRoute']);
+var stocksApp = angular.module('stocksApp', ['ngRoute',  'ngSanitize']);
 
 
-stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scope, $filter, $http) {
+stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", "$sce", function($scope, $filter, $http,  $sce) {
 
 	$scope.stockSubmission = null;
 
@@ -38,6 +38,13 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 	$scope.cons = function(data){
 		console.log("This is from the console: ", data)
 	}
+
+	$scope.iframeUrl = function(url){
+		$scope.currentUrl = $sce.trustAsResourceUrl(url + "&output=embed");
+		console.log($scope.currentUrl);
+	};
+
+	$scope.currentUrl;
 
 	$scope.submit = function(item){
 		console.log(item)

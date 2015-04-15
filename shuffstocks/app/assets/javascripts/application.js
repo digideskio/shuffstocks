@@ -13,6 +13,7 @@
 //= require angular
 //= require angular-route
 //= require angular-resource
+//= requite angular-sanitize
 //= require jquery
 //= require jquery_ujs
 //= require_tree .

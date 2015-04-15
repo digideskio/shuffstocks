@@ -1,26 +1,28 @@
 <div class="home" ng-controller="stocksCtrl">
 
 <form class="stock-form">
-<input class="stock-input" value="I.E. Aapl" ng-model="stockSubmission">
-<button ng-click="submit(stockSubmission)">Submit</button>
+	<input class="stock-input" value="I.E. Aapl" ng-model="stockSubmission">
+	<button ng-click="submit(stockSubmission)">Submit</button>
 </form>
-<div class="stocks-container">
-<h2 class="input-header"> You have {{stocksArray.length}} stock(s) to watch. </h2>
-
-<ul>
-<li ng-repeat="stock in stocksArray">
-	<a ng-click="reassign(stock)">{{cons(stock); stock.name}}</a>
-</li>
-</ul>
-
+<div class="stocks-container left-container">
+	<div class="header-bar"><h2 class="input-header"> You have {{stocksArray.length}} stock(s) to watch. </h2></div>
+	<ul>
+		<li ng-click="reassign(stock)" class="item-panel" ng-repeat="stock in stocksArray">{{stock.name}}</li>
+	</ul>
 </div>
 
+<div class="stocks-container iframe-container">
+	<h2>News Source</h2>
+	<iframe src={{currentUrl}}></iframe>
+</div>
+
+<div class="stocks-container right-container">
+	<h2>News</h2>
 <div id="stock-news" ng-repeat="item in currentItem.newsArticles">
-	{{cons(item)}}
+	<article class="stocks-container item-panel">
+		<a target="_"><h3 ng-click="iframeUrl(item.link)">{{item.title}}<h3></a>
 	<article>
-		<a href={{item.link}} target="_"><h3>{{item.title}}<h3></a>
-		<p>{{item.description}}</p>
-	<article>
+</div>
 </div>
 
 
