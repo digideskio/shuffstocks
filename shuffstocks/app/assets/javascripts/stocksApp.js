@@ -72,5 +72,6 @@ stocksApp.config(function($routeProvider){
 		templateUrl: "<%= asset_path('templates/shuff.html.erb') %>",
 		controller: "stocksCtrl"
 	})
+	
 });
 

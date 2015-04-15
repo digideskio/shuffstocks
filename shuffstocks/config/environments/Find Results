@@ -1,0 +1,52 @@
+Searching 0 files for "config.assets."
+
+0 matches across 0 files
+
+
+Searching 115 files for "config.assets"
+
+/Users/ianvshuff/Code/shuffstocks/shuffstocks/config/environments/development.rb:
+   26    # This option may cause significant delays in view rendering with a large
+   27    # number of complex assets.
+   28:   config.assets.debug = true
+   29  
+   30    # Adds additional error checking when serving assets at runtime.
+   31    # Checks for improperly declared sprockets dependencies.
+   32    # Raises helpful error messages.
+   33:   config.assets.raise_runtime_errors = true
+   34  
+   35    config.serve_static_assets = true
+
+/Users/ianvshuff/Code/shuffstocks/shuffstocks/config/environments/production.rb:
+   24  
+   25    # Compress JavaScripts and CSS.
+   26:   config.assets.js_compressor = :uglifier
+   27:   # config.assets.css_compressor = :sass
+   28  
+   29    # Do not fallback to assets pipeline if a precompiled asset is missed.
+   30:   config.assets.compile = false
+   31  
+   32    # Generate digests for assets URLs.
+   33:   config.assets.digest = true
+   34  
+   35:   # `config.assets.precompile` has moved to config/initializers/assets.rb
+   36  
+   37    # Specifies the header that your server uses for sending files.
+   ..
+   59    # Precompile additional assets.
+   60    # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+   61:   # config.assets.precompile += %w( search.js )
+   62  
+   63    # Ignore bad email addresses and do not raise email delivery errors.
+
+/Users/ianvshuff/Code/shuffstocks/shuffstocks/config/initializers/assets.rb:
+    2  
+    3  # Version of your assets, change this if you want to expire all your assets.
+    4: Rails.application.config.assets.version = '1.0'
+    5  
+    6  # Precompile additional assets.
+    7  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+    8: # Rails.application.config.assets.precompile += %w( search.js )
+    9  
+
+10 matches across 3 files
