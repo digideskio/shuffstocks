@@ -20,6 +20,25 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 	 	return object["fundamentals"];
 	};
 
+	// $scope.checkForIrregularities = function(name){
+	// 	var array = ["Common Stock"]
+	// }
+
+	$scope.parse = function(data){
+		var stock = {}
+		stock.news = JSON.parse(data.news)
+		stock.description = stock.news.rss.channel.description
+		stock.name = stock.description.split(" ").splice(4).join(" ");
+		// stock.name = $scope.checkForIrregularities(stock.name)
+		stock.newsArticles = stock.news.rss.channel.item
+		stock.price = data.fundamentals.bid
+		return stock
+	}
+
+	$scope.cons = function(data){
+		console.log("This is from the console: ", data)
+	}
+
 	$scope.submit = function(item){
 		console.log(item)
 		$http({
@@ -32,9 +51,8 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 
 		})
 		.success(function(data){
-			$scope.stocksArray.push(data);
-			console.log(data);
-			console.log($scope.stocksArray)
+			var stock = $scope.parse(data)
+			$scope.stocksArray.push(stock);
 		});
 	};
 
@@ -42,9 +60,10 @@ stocksApp.controller("stocksCtrl", ["$scope", "$filter", "$http", function($scop
 }]);
 
 stocksApp.config(function($routeProvider){
-	$routeProvider.when("/", {
+	$routeProvider
+	.when("/", {
 		templateUrl: "<%= asset_path('templates/shuff.html.erb') %>",
 		controller: "stocksCtrl"
-	});
+	})
 });
 

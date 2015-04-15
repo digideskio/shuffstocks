@@ -1,23 +1,28 @@
-<div id="home" ng-controller="stocksCtrl">
+<div class="home" ng-controller="stocksCtrl">
 
-<p> You have {{stocksArray.length}} stock(s) to watch. <p>
+<form class="stock-form">
+<input class="stock-input" value="I.E. Aapl" ng-model="stockSubmission">
+<button ng-click="submit(stockSubmission)">Submit</button>
+</form>
+<div class="stocks-container">
+<h2 class="input-header"> You have {{stocksArray.length}} stock(s) to watch. </h2>
 
 <ul>
-<li ng-repeat="item in stocksArray">
-	<a ng-click="reassign(item)">{{item["name"]}}</a>
+<li ng-repeat="stock in stocksArray">
+	<a ng-click="reassign(stock)">{{cons(stock); stock.name}}</a>
 </li>
 </ul>
 
-<div id="stock_name">
-<!-- <h1>Stock Name: {{displayName(currentItem)}}<h1>
- --></div>
-
-<div id="stock_news">
-<p>{{currentItem.news}}<p>
 </div>
 
-<input ng-model="stockSubmission">
-<button ng-click="submit(stockSubmission)" class="btn btn-default">Submit</button>
+<div id="stock-news" ng-repeat="item in currentItem.newsArticles">
+	{{cons(item)}}
+	<article>
+		<a href={{item.link}} target="_"><h3>{{item.title}}<h3></a>
+		<p>{{item.description}}</p>
+	<article>
+</div>
+
 
 </div>
 

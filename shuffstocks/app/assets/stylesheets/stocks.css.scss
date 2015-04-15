@@ -3,9 +3,102 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  padding-top: 50px;
+	position: relative;
+	font-family: Arial;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+
+h1 {
+	margin: 0;
+}
+
+.nav-bar {
+	background-color: #4aa6e2;
+	text-align: center;
+	background: -webkit-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: -moz-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: -o-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: -ms-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: linear-gradient(bottom, #4aa6e2, #B0D8F2);
+}
+
+.nav-bar ul {
+	border-top: .1em solid black;
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+}
+
+.nav-bar ul li{
+	background: -webkit-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: -moz-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: -o-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: -ms-linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	background: linear-gradient(bottom, #4aa6e2, #B0D8F2);
+	font-weight: 600;
+	display: inline-block;
+	list-style: none;
+	padding: 1em;
+	width: 4em;
+	border-left: .1em solid black;
+}
+
+.nav-bar ul li:last-child{
+	border-right: .1em solid black;
+}
+
+
+
+.nav-bar h1 {
+	color: black;
+	font-size: 50px;
+	margin-bottom: 0;
+}
+
+.home {
+	text-align: center;
+}
+
+.input-header{
+	font-size: 40px;
+	font-weight: bold;
+	border-bottom: .1em solid black;
+	width: 20em;
+	padding-top: 1em;
+	margin: 0 auto;
+}
+
+.stock-form {
+	width: 46.5em;
+	margin: 0 auto;
+}
+
+.stock-input {
+	font-size: 60px;
+	outline: none;
+	margin-top: .5em;
+	border-radius: 1em;
+	padding: 0.3em 1em 0.3em 1em;
+	text-align: center;
+	border: none;
+	background: -webkit-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: -moz-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: -o-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: -ms-linear-gradient(bottom, #9BCEEF, #B0D8F2);
+	background: linear-gradient(bottom, #9BCEEF, #B0D8F2);
+}
+
+.stock-form button{
+	background: none;
+	margin-top: .5em;
+	border-radius: 1em;
+	font-size: 32px;
+	border: .05em solid black;
+	outline: none;
+}
+
+.stocks-container {
+	background-color: green;
+	text-align: center;
+	width: 30em;
+	float: left;
 }
